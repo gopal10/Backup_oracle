@@ -1,0 +1,9 @@
+language: java
+jdk: openjdk11
+cache:
+  directories:
+    - "$HOME/.m2/repository"
+script:
+  - mvn clean install -DskipTests
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
